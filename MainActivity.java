@@ -18,8 +18,6 @@ import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
     private Integer counter = 0;
-    private Integer counter2 = 1;
-    public static final String TAG = "StartActivity";
 
     Button plus_ruble;
     TextView balance;
@@ -47,6 +45,15 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(savedInstanceState);
         savedInstanceState.putInt("counter", counter);
 
+    }
+    
+        @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        if (savedInstanceState != null &&
+                savedInstanceState.containsKey("counter")) {
+            count = savedInstanceState.getInt("counter");
+        }
     }
 
     void Plus_ruble() {
