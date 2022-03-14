@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         super.onRestoreInstanceState(savedInstanceState);
         if (savedInstanceState != null &&
                 savedInstanceState.containsKey("counter")) {
-            count = savedInstanceState.getInt("counter");
+            counter = savedInstanceState.getInt("counter");
         }
     }
 
